@@ -1,38 +1,278 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Montserrat:wght@100;200;300;500&family=Work+Sans:wght@100;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+html{
+  background-color: #95ccc7;
+  scroll-behavior: smooth;
+}
+
+.app{
+  background-color: #95ccc7;
+}
+
+body{
+
+  overscroll-behavior-y: none;
+  overflow-x: hidden;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(255,255,255, 0);
+}
+
+.nav-links{
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+nav a{
+  color: white;
+  text-decoration: none;
+  font-family: Montserrat 'sans-serif';
+}
+
+.project-column{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-card{
+  width: 35vw;
+  height: 500px;
+  margin: 50px 20px;
+  position: relative;
+  color: white;
+  background-color: rgba(255,255,255, 0.4);
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.project-card h1 {
+  font-size: 45px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hero{
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.animationsDiv {
+  position: relative;
+}
+
+.mbanimation{
+  animation: skewHero 1s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+  position: relative;
+  z-index: 1;
+}
+
+.mbanimation2{
+  position: absolute;
+  opacity: 0;
+  animation: slideOut 1s, fadeIn .25s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+  z-index: -1;
+}
+
+.mbsvg{
+  fill-opacity: 0;
+  animation: fadeIn-fill 2s;
+  animation-delay: 3s;
+  animation-fill-mode:forwards;
+}
+
+.tagline{
+  text-align: center;
+  font-family: Work Sans;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 60px;
+  font-size: 30px;
+  letter-spacing: 10px;
+  opacity: 0;
+  animation: fadeIn 2s;
+  animation-delay: 4s;
+  animation-fill-mode:forwards;
+  text-shadow: -4px 3px #729c98;
+}
+
+.about{
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 23px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.about a{
+  text-decoration: none;
+  color: #234866;
+  text-shadow: none;
+  font-weight: 500;
+  -webkit-transition: font-weight .5s, text-shadow .5s, color .5s;
+}
+.about a:hover{
+  color:white;
+  text-shadow: -3px 3px #729c98;
+  font-weight: 800;
+  animation-fill-mode: forwards;
+  -webkit-transition: font-weight .5s, text-shadow .5s, color .5s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.project-section{
+  margin-top: 20vh;
+}
+
+.heading{
+  display: flex;
+  justify-content: center;
+  font-family: Work Sans;
+  font-weight: 900;
+  font-size: 50px;
+  color:white;
+  text-shadow: -4px 3px #729c98;
+  margin-bottom: 5vh;
+}
+
+.info{
+  margin: 10vh 0 5vh 0;
+}
+
+.info ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.info li{
+  margin:0 3vw;
+}
+.info svg{
+  fill: white;
+  width: 45px;
+  height: 45px;
+  -webkit-transition: fill .5s;
+}
+
+.info svg:hover{
+  fill: #729c98;
+  animation-fill-mode:forwards;
+  -webkit-transition: fill.5s;
+}
+
+#contactForm{
+  display: flex;
+  flex-direction: column;
+  margin: 0 65px;
+}
+
+input.formInputs{
+  height: 40px;
+}
+
+.formInputs{
+  width: 100%;
+  background-color: rgba(255,255,255, .75);
+  border: none;
+  margin: 10px 0;
+  border-radius: 5px;
+  font-family: Montserrat;
+  font-weight: 300;
+  padding: 10px;
+}
+
+.formInputs:focus{
+  outline:none;
+}
+
+.form-style{
+  margin-top: 15vh;
+}
+
+#form-submit{
+  font-size: 25px;
+  text-decoration: none;
+  color:white;
+  text-shadow: none;
+  font-family: Montserrat;
+  font-weight: 500;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+  -webkit-transition: font-weight .5s, text-shadow .5s, color .5s, background-color .5s, border .5s;
+}
+
+#form-submit:hover{
+  color:white;
+  text-shadow: -3px 3px #c7991b;
+  font-weight: 900;
+  background-color: #eebf3f;
+  border: 1px solid transparent;
+  animation-fill-mode: forwards;
+  -webkit-transition: font-weight .5s, text-shadow .5s, color .5s, background-color .5s, border .5s;
+}
+
+#submit-anim{
+  position: relative;
+  overflow: hidden;
+  min-height: 12em;
+  padding: 2vw 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#thumb {
+  width: 30px;
+  height: 30px;
+  fill: white;
+  animation: thumbsUp .75s;
+  animation-fill-mode: forwards;
+}
+#submit-tagline{
+  text-align: center;
+  color: white;
+}
+
+@keyframes thumbsUp{
+  0%{width:30px; height:30px;}
+  50%{width:65px; height:65px;}
+  100%{width:50px; height:50px}
+}
+
+@keyframes skewHero{
+  0%{transform: skewY(0deg) skewX(0deg);}
+  100%{transform: skewY(5deg) skewX(6deg);}
+}
+@keyframes moveTextBack{
+  0%{right:-70px;}
+  100%{right: -60px;}
+}
+
+@keyframes fadeIn{
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+@keyframes fadeIn-fill {
+  0% {fill-opacity:0;}
+  100% {fill-opacity:1;}
+}
+
+@keyframes slideOut {
+  0%{ left: 0; top: 0}
+  100%{ left: -6px; top: 5px;}
 }
