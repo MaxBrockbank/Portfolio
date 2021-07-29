@@ -35,7 +35,7 @@ function Form() {
         setSnack(true);
       })
       .catch((err) => {
-        console.log("FAILED...", err)
+        setSnack(true);
       })
   };
 
@@ -65,6 +65,7 @@ function Form() {
                   placeholder="Name" 
                   className="formInputs"
                   onChange={handleChange}
+                  required
                 />
               </Col>
               <Col>
@@ -74,6 +75,7 @@ function Form() {
                   placeholder="Email Address" 
                   className="formInputs"
                   onChange={handleChange}
+                  required
                 />
               </Col>
             </Row>
@@ -84,6 +86,7 @@ function Form() {
               className="formInputs" 
               placeholder="Write me a message! Please be specific with any job information."
               onChange={handleChange}
+              required
             />
             <input
               id="form-submit"
@@ -91,6 +94,9 @@ function Form() {
               value="SEND IT!" 
             />
           </form>
+          <Snackbar open={snack} autoHideDuration={6000} onClose={handleClose} anchorOrigin={{vertical:'bottom', horizontal:'right'}}>
+            <Alert open={snack} onClose={handleClose} severity="error">Something went wrong. Please try again later or contact via email.</Alert>
+          </Snackbar> 
         </Container>
       </>
     )

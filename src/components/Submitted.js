@@ -19,7 +19,7 @@ function Submitted (props){
       radius: {0:80},
       angle: { 0:140, easing:mojs.easing.bezier(0.1, 1, 0.3, 1) },
       children: {
-        fill: '#ffffff',
+        fill: '#eebf3f',
         radius: 20,
         opacity: 0.6,
         duration: 1500,
